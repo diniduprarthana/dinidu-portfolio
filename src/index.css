@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add this to your main CSS file */
+html {
+  scroll-behavior: smooth;
+}
+
+/* This ensures content isn't hidden behind fixed navbar */
+section {
+  scroll-margin-top: 80px;
+}
+/* Use Poppins as the default font */
+html, body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f172a; /* Deep slate blue, matches your primary.950 */
+  color: #fff;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+/* Selection color for better UX */
+::selection {
+  background-color: #a5b4fc; /* primary.300 */
+  color: #fff;
+}
+
+/* Custom scrollbars for modern look */
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #312e81; /* primary.900 */
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #4f46e5 10%, #7c3aed 90%);
+  border-radius: 8px;
+}
+
+/* Utility for gradient text headings */
+.gradient-text {
+  background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+
+/* Card utility for consistent glassy cards */
+.card {
+  @apply bg-primary-900/80 border border-primary-800/60 rounded-2xl shadow-lg shadow-primary-950/10 p-6 backdrop-blur-md;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-primary-600 to-accent-500 hover:from-primary-700 hover:to-accent-600 text-white font-semibold px-6 py-2 rounded-lg shadow transition-all duration-300 flex items-center gap-2;
+}
+
+/* Section container for page content */
+.section-container {
+  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Section titles */
+.section-title {
+  @apply text-4xl md:text-5xl font-extrabold mb-4 gradient-text text-center;
+}
+.section-subtitle {
+  @apply text-lg text-primary-200 mb-12 text-center;
+}
+
+/* Responsive navbar tweaks (if needed) */
+.nav-link {
+  @apply text-primary-100 hover:text-accent-400 font-medium transition duration-200;
+}
+
+/* Floating animation for icons or images */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* For gradient backgrounds */
+.bg-gradient-indigo {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+}
+
+/* Remove blue tap highlight on mobile */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+/* index.css or App.css (optional for custom styles) */
+.btn-primary {
+  @apply inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition-all duration-300 text-lg focus:outline-none focus:ring-2 focus:ring-indigo-300;
+}
